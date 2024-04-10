@@ -1,0 +1,12 @@
+<h1>BillBoard</h1>
+@if(movies.length > 0){
+<div class="row">
+    <div class="col">
+        <app-slideshow [movies]="movies"></app-slideshow>
+    </div>
+</div>
+}
+
+<h1 class="mt-5">Movies</h1>
+
+<app-films-poster-grid [movies]="movies"></app-films-poster-grid>
