@@ -4,10 +4,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search a film" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <div class="d-flex" role="search">
+          <input #txtSearch (keyup.enter)="searchFilm(txtSearch.value)" class="form-control me-2" type="search" placeholder="Search a film" aria-label="Search">
+          <button class="btn btn-outline-success" (click)="searchFilm(txtSearch.value)" type="submit">Search</button>
+        </div>
       </div>
     </div>
   </nav>

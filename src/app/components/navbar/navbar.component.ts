@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,5 +9,14 @@ import { RouterModule } from '@angular/router';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  constructor(private router: Router){
+  }
 
+  searchFilm(pattern:string){
+    pattern = pattern.trim();
+    if(pattern.length === 0)
+      return;
+
+    this.router.navigate(['search', pattern])
+  }
 }

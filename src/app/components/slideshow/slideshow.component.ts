@@ -15,14 +15,11 @@ import { CommonModule } from '@angular/common';
 })
 export class SlideshowComponent implements AfterViewInit {
   movies = input(new Array<Movie>(), {alias: 'movies'});
-  public myswiper: Swiper = new Swiper('');
-  constructor() {
-     console.log(this.movies());
-  }
+  public myswiper!: Swiper;
 
   ngAfterViewInit(): void {
     this.myswiper = new Swiper('.swiper', {
-      loop: true,
+      autoplay: true
     });
   }
 

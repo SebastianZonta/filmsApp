@@ -1,1 +1,35 @@
-<p>film works!</p>
+@if(MovieDetail){
+
+<div class="row mb-5">
+    <div class="col-md-4">
+        <img [src]="MovieDetail.poster_path | poster" [alt]="MovieDetail.title" class="img-thumbnail">
+    </div>
+    <div class="col-md-4">
+        <h3>{{MovieDetail.title}}</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <star-rating [starType]="'svg'" [readOnly]="true" [rating]="MovieDetail.vote_average"></star-rating>
+            </div>
+            <div class="col-md-2">
+                <span class="text-white">{{MovieDetail.vote_average | number:'1.1-2'}}</span>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <p class="text-white">{{MovieDetail.overview}}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-outline-info" (click)="onGoBack()">Go back</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if(Cast.length > 0){
+<app-cast-slide-show [cast]="Cast" class=""></app-cast-slide-show>
+}
+}

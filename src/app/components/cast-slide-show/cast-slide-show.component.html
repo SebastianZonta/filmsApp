@@ -1,0 +1,14 @@
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        @for (cast of Casts(); track cast.id) {
+        <div class="swiper-slide text-white">
+            <img [src]="cast.profile_path | poster" [alt]="cast.name" class="img-thumbnail">
+            {{cast.name}}
+        </div>
+        }
+    </div>
+    <div (click)="onSlidePrevious()" class="swiper-button-prev"></div>
+    <div (click)="onSlideNext()" class="swiper-button-next"></div>
+</div>
